@@ -1,14 +1,11 @@
-public class ReverseLetterMethod2 {
+package org.reverseletter;
 
-    public static void main(String[] args) {
-        String input = "J@va the be$t!123";
-        System.out.println(reverseLetters(input));
-    }
+public class BuilderReverse {
 
     /**
      * Разворачивает только буквы в строке; остальные символы остаются на месте.
      */
-    static String reverseLetters(String input) {
+    static String reverse(String input) {
         StringBuilder reversedLetters = new StringBuilder();
         StringBuilder result = new StringBuilder();
         int letterIndex = 0;

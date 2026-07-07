@@ -1,33 +1,31 @@
-public class ReverseLetterMethod1 {
-    public static void main(String[] args) {
-        //Объявляем строку
-        String input = "J@va the be$t!123";
+package org.reverseletter;
+
+public class TwoPointerReverse {
+
+    static String reverse(String input){
 
         //Выполняем преобразование строки в массив
         char[] inputArray = input.toCharArray();
 
         //Объявляем 2 счетчика: идём с краёв к центру
         int start = 0;
-        int end = input.length() -1;
+        int end = input.length() - 1;
 
-        while (start < end)
-        {
+        while (start < end) {
             // Слева не буква — пропускаем, она остаётся на месте
-            if (!Character.isLetter(inputArray[start]))
-            {
+            if (!Character.isLetter(inputArray[start])) {
                 start++;
                 continue;
             }
 
             // Справа не буква — пропускаем
-            else if (!Character.isLetter(inputArray[end]))
-            {
-                end --;
+            else if (!Character.isLetter(inputArray[end])) {
+                end--;
                 continue;
             }
 
             //Обе позиции — буквы: меняем местами
-            char leftLetter  = inputArray[start];
+            char leftLetter = inputArray[start];
             inputArray[start] = inputArray[end];
             inputArray[end] = leftLetter;
 
@@ -35,7 +33,6 @@ public class ReverseLetterMethod1 {
             end--;
         }
 
-        //Выводим массив на экран
-        System.out.println(new String(inputArray));
+        return new String(inputArray);
     }
 }
